@@ -1,0 +1,109 @@
+<!-- Forms and Tables
+Fila: Horizontal
+Columna: Vertical
+
+Tables: 
+
+    - Elements:
+    <table></table>
+    <td></td>
+    <tr></tr>
+    <th></th>
+    <thead></thead>
+    <tbody></tbody>
+    <tfoot></tfoot>
+    <colgroup></colgroup>
+    <caption></caption>    
+
+    td - COLUMNAS: celda de datos de tabla o datos de tabla. Representa una sola celda. Define una sola celda en una tabla que contiene datos
+    tr (table row) - FILAS: Representa una fila de celdas
+    th - ENCABEZADO: Va dentro de un tr
+
+
+    thead: parte de arriba de la tabla
+    tfood: parte de abajo de la tabla
+    tbody: cuerpo de la table
+
+    Colspan & Rowspan
+    ¿Como crear encabezados que tengan multiples columnas?
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haviest Birds Table</title>
+</head>
+<body>
+    <h1>Haviest birds</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Animal</th>
+                <th>Average mass</th>
+                <th>Maximum mass</th>
+                <th>Flighted</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ostrich</td>
+                <td>104(230)</td>
+                <td>404(230)</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>Somali Ostrich</td>
+                <td>90(200)</td>
+                <td>230(200)</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>Wild Turkey</td>
+                <td>340(600)</td>
+                <td>222(500)</td>
+                <td>yes</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h2>V2</h2>
+     <table>
+        <thead>
+            <tr>
+                <th rowspan ="2">Animal</th> <!--Su altura es de dos filas (Average Mass, KG Y LB)-->
+                <th colspan="2">Average mass</th>  <!-- Abarca dos columnas (KG Y LB) -->
+                <th rowspan="2">Flighted</th>  <!--Su altura es de dos filas (Average Mass, KG Y LB)-->
+            </tr>
+            <tr>
+                <th>KG</th>
+                <th>LB</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ostrich</td>
+                <td>104</td>
+                <td>230</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>Somali Ostrich</td>
+                <td>90</td>
+                <td>200</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>Wild Turkey</td>
+                <td>340</td>
+                <td>600</td>
+                <td>yes</td>
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>
+    
