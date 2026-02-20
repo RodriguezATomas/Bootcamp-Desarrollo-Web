@@ -1,0 +1,66 @@
+<!-- Inline vs block elements - Divs and spans 
+Div: division de contenido. Contenedor generico para contener cosas o agrupar elementos y es un elemento de nivel de bloque
+ENTONCES. si agrego un div alrededor de algun contenido, ese div coupa el bloque completo y forzara el contenido por encima y debajo de el 
+Lo usamos como forma de agrupar contenido
+Span: es otro contenedor generico pero es un elemento en linea. No ocupa su propio bloque de contenido, es en linea
+ Es una forma de resaltar algo para que podamos diseñarlo de manera diferente -->
+
+ <!-- An odd assortment of elements: HR, BR, Sup & sub 
+ HR: divisor, no tiene etiqueta de cierre. Divisor pero marca una linea 
+ BR: Freno de linea. Hace que las lineas se rompan, una debajo de otra
+ SUP (SUPERINDICE): Van arriba de la palabra, numero, etc. Como si fuera un numero al cuadrado
+ SUB (SUBINDICE): Va abajo de la palabra. Lo contraio a superindice
+ -->
+
+ <!-- HTML entities: codigo de entidad
+Son codigos especiales o secuencias que podemos usar en lugar de nuestro HTML que daran como resultado diferentes caracteres
+Empiezan con un & y terminan con un ; Y en el medio colocamos una cadena de caracteres
+
+
+SE HACE ESTO: <h1>1 &lt; 6 &gt; 5</h1> --- <h1>1 &lt; 6 &gt; 5 &amp; &spades;</h1> --- 
+Y NO ESTO: <h1>1 < 6</h1>
+-->
+
+<!-- INTRO to Semantic Markup
+ Es un marcado significativo o marcado que se relaciona o pertenece al significado del contenido de ese elemento
+
+ Main
+ header
+ section
+ Nav
+ Footer
+
+(Se comportan como divs pero estan mejor divididos) - Mejores practicas, es mas facil de encontrar cada uno
+Es importante porque agrega significado a nuestro marcado y ese significado pordia ser para otras computadoras
+o para una aplicacion o para google
+
+
+Playing with Semanic Elements: 
+
+Algunos que podriamos usar en lugar de divs
+
+<section>: Representa una seccion indeoendiente de una app o sitio web
+<article> Element: Representa una composicion autonoma en un documento. Como un articulo de un diario. Lo utilizamos para agrupar contenido
+Debe haber un encabezado de que se trata el articulo, podria tener un articulo de criticas y un monton de subarticulos
+<nav> - Navegacion: representa cualquier elemento de la pagina que proporcione enlaces de navegacion
+<main>: Parte prinicipal del body
+
+<header>: cualquier tipo de contenido introductorio. Esta ARRIBA
+<footer>: Pie de pagina - Es lo que esta abajo 
+A menudo ambos incluiran enlaces de navegacion o navs anidados
+
+<aside> (aparte): No forma parte del documento, osea puede formar, pero no es escencial. Se presentan como barras laterales, cuadros de llamada
+<summary>
+<details>
+
+ELEMENTO DE TIEMPO - <time datetime="2018-07-07">july 7</time>
+<time datetime="20:00">20:00</time>
+
+<figure>: hay una figura (IMAGEN) y tiene otro elemento llamado Titulo de figura (figcaption)
+
+<abbr title=""></abbr> : ABREVIATURA
+<data value=""></data> : Elemento de datos
+-->
+
+
+<!-- Screen Reader Demosnstracion (LECTORES DE PANTALLA) : Descargar en windows. En este caso lo utilizamos para ver la difernecia entre usar divs y navs, main, etc.-->
