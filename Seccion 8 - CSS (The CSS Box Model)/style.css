@@ -1,0 +1,113 @@
+/* The CSS BOX MODEL
+
+Cada DIV representa una caja donde cada una se le puede dar distinto diseño
+
+Podemos controlar el grosor, stilo, color, hacerlo para la izquierda, derecha, parte inferior o superior
+Redondear esquina, etc
+
+- WIDTH & WEIGHT (Altura y Ancho)
+
+div{ width: 200px; height: 500px; } - Maneja el tamaño del DIV
+
+- BORDER & BORDER-RADIUS
+Borde alrededor de un elemento
+
+Tenemos tres tipos: 
+1) BORDER-WIDTH: the thickness of the border (Ancho del borde) 
+2) BORDER-COLOR: color of the border
+3) BORDER-STYLE: Dashed, solid, dotted, inset, one, etc
+
+EJEMPLO: Para que se vea, van los 3 juntos
+    border-width: 5px; ANCHO
+    border-color: black; COLOR
+    border-style: solid; ESTILO
+
+    box-sizing: border-box; ESTO SE UTILIZA PARA QUE EL ANCHO DEL DIV QUEDE IGUAL QUE EL DE ABAJO
+
+    border-left-color: blue ; SE PUEDE CAMBIAR EL COLOR, GROSOR, ETC. DE UN SOLO BORDE
+    Derecha, izquierda, abajo o arriba
+
+    FORMA RESUMIDA Y MEJOR PARA HACER:
+
+    border: 4px solid black; (Juntas los 3 en uno solo)
+
+Border Radius - Nos permite hacer que las esquinas de los bordes sean mas redondas
+EJEMPLOS
+    . border-radius: 10px;
+    . border-radius: 10px 100px / 120px;
+
+- BOX MODEL: PADDING
+Espacio entre el contenido, el cuadro del contenido real y el borde de un elemento
+Espacio entre el interior y el elemento
+(Aleja el contenido de los elementos)    
+
+Tipos: LEFT, RIGHT, BOTTOM, TOP
+
+FORMA ABREVIADA DE APLICAR: 4 FORMAS
+
+    A - Apply to all four sides -> padding:10px
+    B - Vertical | Horizontal -> padding: 5px 10px;
+    C - Top | horizonal | bottom -> padding: 1px 2px 2px
+    D - Top | right | bottom | left -> padding: 5px 1px 0px 2px
+
+- BOX MODEL: MARGIN
+Es el espacio fuera del borde de un elemento entre ese elemento y algo mas. 
+Es el espacio exterior del borde. (SEPARA EL MARGEN DE LOS ELEMENTOS RESPECTO A LA PANTALLA U A OTROS ELEMENTOS)
+
+Tipos: LEFT, RIGHT, BOTTOM, TOP
+
+EJEMPLOS:
+    . margin-left: 20px;
+*/
+
+div{
+    width: 200px;
+    height: 500px;
+}
+
+h1{
+    background-color: pink;
+    width: 100px;
+    padding-left: 200PX;
+    padding-top: 100PX;
+    margin: 0;
+}
+
+#one{
+    background-color: #e5989b;
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    /* border-radius: 10px 100px / 120px; */
+    /* box-sizing: border-box; */
+    margin-left: 20px;
+}
+#two{
+    background-color: #b5838d;
+    border-color: #ffcdb2;
+    border-width: 3px;
+    border-style: dashed;
+    padding-right: 40px;
+
+    /* border-left-color: blue ;
+    border-left-width: 5px; */
+    
+    margin: 100px;
+}
+#three{
+    background-color: #6d6875;
+    border: 4px solid black;
+    border-left-style: dashed;
+    border-radius: 10px;
+}
+
+button{
+    /* padding: 20px; */
+    /* padding: 0px 1Opx; */
+    padding: 10px 20px 30px 40px;
+    
+}
+
+span{
+    margin-left: 30px;
+}

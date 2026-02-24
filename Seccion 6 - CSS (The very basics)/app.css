@@ -1,0 +1,65 @@
+h3{
+    color: #5FCFFC;
+    background-color: rgb(152, 214, 90);
+}
+
+button{
+    color: aqua;
+    background-color: #a62b2b;
+}
+
+p{
+    color: chocolate;
+    /* Background solo hace mucho mas que background-color
+    como establecer una imagen de fondo, degradado, etc.
+    En cambio background-color es solo para el color del fondo
+    */
+}
+
+/* Color systems: RGB & Named colors
+RGB: Red Green Blue (paleta principal)
+
+ -va de 0 a 255
+
+EJEMPLO
+
+rgb(255, 0, 0) - RED
+rgb(0, 0, 255) - BLUE
+rgb(173, 20, 219) - VIOLET
+rgb(0, 0, 0) - BLACK
+
+Tambien podemos buscar COLOR PICKER en Google
+*/
+
+/* Otra forma de representar color: HEXADECIMAL 
+Se utiliza la misma paleta de colores RGB, pero la diferencia es que se escribe en hexadecimal
+
+HEXADECIMAL: cada digito de un numero varia entre el 0 y 9
+El numero mas grande un digito es 9, el mas grande de dos digitos 99, etc.
+
+En hexadecimal es base de 16. Es decir, un numero tiene 16 opciones. ¿Y cuando nos quedamos sin numeros? 
+Utilizamos ABCDE y F. F aqui es 15, representa 15 si esuviera en decimal. El numero mas grande que podemos representar en hexadecimal es f
+f=15
+
+Utilizamos hexadecimal para almacenar mas informacion en un solo digito
+
+EJEMPLO:
+#ff   ff   00 = #ffff00
+red green blue
+
+#of   56   79 = #0f5679
+red green  blue
+*/
+
+body{
+    /* background-color: #000000; em vez de tener asi, lo puedo abreviar */
+    background-color: #000;
+
+    /* background-color: #cc55ee 
+    Este tambien, en: #c5e
+    */
+
+}
+
+/* El ; al final de cada linea es ESCENCIAL */
+

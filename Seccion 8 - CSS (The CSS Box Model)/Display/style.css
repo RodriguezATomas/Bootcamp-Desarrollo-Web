@@ -1,0 +1,141 @@
+/*
+- CSS UNITS REVISITED
+
+    . Absolute: PX, PT, CM, IN, MM 
+    Los pixeles son los mas comunes, los otros casi que ni se usan
+
+    . Relative: EM, REM, VH, VW, %, AND MORE!
+   
+    1) Procentajes %: Son relativos a algun otro valor, porcentaje de algo
+    EJEMPLO: 
+    
+    width: 50% - mitad del TOTAL del elemento
+    line-height: 50% - Son relarivos a la fuente que utilizamos
+
+    2) EMs: Relativas a algun otro valor, el valor cambia segun propiedad.
+    Si configuramos el tamaño de fuente con un EM, tendra el mismo tamañp de fuente que su elemento padre
+    Para EMs sera el doble del tamaño fuente del elemento principal
+
+    EJEMPLO:
+
+    article{ font-size: 20px;} En este caso hereda el tamaño del elemento principal
+
+    ARTICLE 
+    es el padre de los otros elementos
+    entonces en base a su tamaño, van cambiando los otros elementos 
+
+
+    button{
+        font-size: 1em;
+        padding: 0 1em;
+        border-radius: 15px;
+        background-color: rgb(83, 110, 43);
+        color: white; 
+    }
+        En este caso, cuando uso EM y se agranda el tamaño, no cambia la forma de los bordes
+        en cambio si uso PX y agrando el boton, cambia la forma de los bordes
+    
+
+    3) REMs: Similar a EMs pero en lugar de derivar el tamaño fuente del elemento principal,
+    derivan el tamaño fuente de los elementos HTML raiz.
+    Entonces si el elemento HTML raiz tiene un tamaño de 20px, todos tendras el mismo tamaño
+
+    el elemento raiz es el HTML del index y tiene un valor.
+
+    Ese valor tambien se puede cambiar
+    
+    Por ejemplo:
+
+    html{ font-size:10px; }
+
+    Y TODOS ESTOS CAMBIAN EN RELACION AL TAMAÑO GENERAL DEL HTML
+    
+    #rems h2{
+    font-size: 3rem;
+    }
+    #rems h3{
+        font-size: 2rem;
+    }
+    #rems ul{
+        font-size: 1rem;
+    }
+    #rems button{
+        font-size: 5rem;
+    }
+
+
+
+*/
+
+#percentages{
+    background-color: cadetblue;
+    width: 800px;
+    height: 800px;
+}
+
+#percentages div{
+    background-color: aquamarine;
+    width: 50%;
+    height: 50%;
+}
+
+/*En este caso el div ocupa el 50% de altura y de ancho que el section*/
+
+/* h1{
+    font-size: 40px;
+    border: 1px solid black;
+    line-height: 200%; Representa el 200% del tamaño de la fuente
+} */
+
+#ems h2{
+    font-size: 5em;
+    margin-left: 1em;
+}
+#ems h3{
+    font-size: 1.5em;
+}
+#ems p{
+    font-size: 1em;
+}
+
+#ems{
+    font-size: 20px;
+} /*En este caso hereda el tamaño del elemento principal
+
+ARTICLE 
+es el padre de los otros elementos
+entonces en base a su tamaño, van cambiando los otros elementos 
+*/
+
+button{
+    font-size: 1em;
+    padding: 0 1em;
+    border-radius: 15px;
+    background-color: rgb(83, 110, 43);
+    color: white; 
+
+    /*En este caso, cuadno uso EM y se agranda el tamaño, no cambia la forma de los bordes
+    en cambio si uso PX y agrando el boton, cambia la forma de los bordes*/
+}
+
+ul{
+    font-size: 1.5em; /*Si utilizo esto, los subitems quedan MUY grandes
+    Ya que se basan en el tamño fuente de los padres*/
+} 
+
+#rems h2{
+    font-size: 3rem;
+}
+#rems h3{
+    font-size: 2rem;
+}
+#rems ul{
+    font-size: 1rem;
+}
+#rems button{
+    font-size: 5rem;
+}
+
+html{
+    font-size: 20px;
+}

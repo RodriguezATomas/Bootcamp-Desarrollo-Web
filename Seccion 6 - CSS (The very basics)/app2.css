@@ -1,0 +1,62 @@
+/* CSS Text Properties: Todas estas propiedades tiene que ver con el texto
+
+-Text-align: Para alinear el texto. Por predeterminado empieza a la izquierda (left)
+
+-Font-weight: Es la claridad que le vamos a dar al texto (clarita, oscura, mas oscura)
+(normal, bold, lighter, bolder, etc)
+
+-Text-decoration: Controla la apariencia de lineas decorativas en el texto
+(underline, overline, line-through). Se le puede agregar color
+Ej: blue underline
+Tambien puede ser linea punteada, continua, curva, etc
+
+Text-decoration:underline wavy;
+Text-decoration:underline solid;
+Text-decoration:underline double;
+Text-decoration:underline dashed;
+Text-decoration:underline dotted;
+
+-line-height: Altura de linea. Controla la altura de linea del texto
+Espacio entre oraciones
+
+-letter-spacing: Espacio entre letras. Para separar letras
+
+
+
+FONT SIZE BASIC WITH PIXELS:Tamaño de fuente
+pixels: No es lo mas recomendable pero es facil para empezar. Tienen el tamaño del resultado final
+Varia segun tamaño de pantalla y segun otras cosas. No recomendable para sitios web
+
+
+FONT-FAMILY: La utilizamos para cambiar la fuente del documento
+ Usar las que sean comunes en ambas plataformas
+
+Pilas de fuentes: lista de fuentes que nosgustaria usar en orden
+ejemplo: font-family: arial, sans-serif (Arial primera opcion, sans segunda opcion) Y asi con mas opciones
+Son copias de seguridad
+
+TEXT-TRANSFORM: uppercase
+Para poner las letras en mayuscula
+
+
+*/
+
+h1{
+    text-align: center;
+    font-weight: normal;
+    text-decoration:underline wavy;
+    letter-spacing: 10px;
+    font-size: 50px;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: monospace;
+
+}
+
+a{
+    text-decoration:none;
+    /* Le saca la linea al link */
+}
+
+p{
+    line-height:2;
+}

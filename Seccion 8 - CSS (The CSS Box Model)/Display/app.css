@@ -1,0 +1,67 @@
+/* 
+- DISPLAY PROPERTY
+
+    Tipos: Los mas importantes
+        1)INLINE: Se comportan como elementos en linea (Todos en la misma linea)
+            EJEMPLO:
+            h1{ background-color: yellowgreen; border: 2px solid black;
+                display: inline; }
+
+            span{ background-color: rgb(137, 145, 123); border: 2px solid black;}
+
+            (Estan en la misma linea)
+        
+        2)BLOCK: Ocupan la linea completa de la pantalla. Se comporta como elementos en nivel de bloque
+        EJEMPLO:
+        span{ background-color: rgb(137, 145, 123); border: 2px solid black; 
+        display: block; }    
+
+        3)INLINE-BLOCK: Se comportara como un element en linea, excepto que se respetaran la altura, margen y relleno
+        EJEMPLO
+        div{
+            height: 200px;
+            width: 200px;
+            background-color: olivedrab;
+            border: 1px solid black;
+            display: inline-block; 
+        }
+
+        Se comporta como elementos en linea, 
+        los pone uno al lado de otro pero respetadno el espacio y forma entre ellos
+
+*/
+
+/* 
+span{
+    background-color: rgb(137, 145, 123);
+    border: 2px solid black;
+    display: block;
+} */
+
+span{
+    background-color: aquamarine;
+    border: 4px solid black;
+    width: 500px; /*En los elementos en linea ignora la altura - NO VA A FUNCIONAR*/
+    padding: 10PX;
+    margin: 50PX; /*Solo se respeta horizontalmente, arriba y abajo no se respeta*/
+}
+
+h1{
+    background-color: yellowgreen;
+    border: 2px solid black;
+    width: 200px;
+    height: 100px;
+    padding: 50px;
+    margin: 100px;
+    display: none; /*El elemento esta ahi pero no ocupa espacio, no se muestra*/
+}
+
+div{
+    height: 200px;
+    width: 200px;
+    background-color: olivedrab;
+    border: 1px solid black;
+    display: inline-block; /*Se comporta como elementos en linea, 
+    los pone uno al lado de otro pero respetadno el espacio y forma entre ellos*/
+    margin: 50px;
+}

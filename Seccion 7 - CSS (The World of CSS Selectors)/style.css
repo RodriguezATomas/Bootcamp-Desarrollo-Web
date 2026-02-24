@@ -1,0 +1,300 @@
+/* SELECTORS:
+Formas de seleccionar elementos para modificar en css
+hay muchos posibles selectors
+
+UNIVERSAL & ELEMENT Selectors
+
+* - Universal selector: Selecciona todo el documento
+No es una buena idea porque en un documento grande puede ser ineficiente
+por ej: seleciona todas las palabras del documento y se le pone un color
+No se usa comunmente
+
+
+Element selector: Selecciona un tipo determinado.
+Por ej: selecciono el elemento h2 y cambia todos los h2
+o sino selecciono el elemento button y les cambia el tamaño a todos
+
+SE PUEDE USAR UNA COMA PARA COMBINAR MULTIPLES SELECTORES
+
+h1, h2{ color: magenta;} - Selecciona todos los h1 y h2 y les pone color magenta
+
+
+ID SELECTOR: Identificardor unico
+Le pongo un id="" a un atributo HTML para seleccionar ese elemento que queremos modificar
+y en css lo llamamos con # y el nombre que le pusimos al id=""
+
+No usar para todo el ID SELECTOR, no es una buena practica
+
+
+CLASS SELECTOR: Uno de los mas utilizados
+Como no queremos que todo sea distinto, utilizamos una clase para seleccionar los que queremos que sean iguales
+Se utiliza un . y el nombre de la clase, ejemplo:
+
+.tag { color:blue };
+
+No si o si tiene que ser de los mismos elementos. Puede ser un h1, con un p, con un span
+
+
+DESCENDANT SELECTOR: Lo escribimos usando un espacio
+Etiquetas anidadas o descendientes. Es diferente de usar cosa
+Con espacio significa que son etiquetas de anclaje
+
+Por ej::after
+
+li a { color: teal }; 
+
+a li no se le aplica nada
+Tambien se puede combinar con una clase por ejemplo
+
+.post a { color: #457b9d; }
+
+ADJACENT SELECTOR: Sumas dos elementos. h1 + p
+(No se usan con mucha frecuencia)
+
+Seleeciona los parrafos que estan precedidos por un h1, es decir, parrafos que vienen despues de un h1 en el mismo nivel
+
+DIRECT CHILD: Descendiente directo
+Ejemplos: div>li
+(selecciona los li que son hijos directos de un div)
+footer > a{ color: #457b9d; }
+Es un hijo directo de footer porque no esta dentro de un nav ni de nada 
+
+ATRIBUTTE SELECTOR: Nos permite seleccionar elementos con algun atributo en particular
+por ejemplo. De un input nos permite solo cambiar las letras del texto
+
+input[type="text"]{ color: red; } - Cambia solo las letras
+input[type="password"]{ color: red; } - Cambia los digitos 
+section[class="post"]{ background-color: violet; } - De la seccion cambia el fondo
+
+
+PSEUDO CLASSES
+Son el tipo de modificaciones que son palabras clave que agregamos al final de un selector que 
+especifica un estado particular de esos elementos seleccionados
+    -Comienzan cons dos puntos. EJ, :active, :hover, :checked, :nth-of-type
+
+    Una de las mas comunes
+    
+    a:hover {color: orange}; cuando pasamos el cursor sobre a muestra el color naranja
+    O cambia el color de algo cuando pasas por encima
+    
+    .post button:active{background-color: green}; se esta activando manualmente. Cuadno lo mantengo presionado cambia de color
+
+    option:checked{color:red}; cuando selecciono un elemento de tipo check o radio, cambia de color
+
+    .post:nth-of-type(2){ background-color: #dfe8dc; } De un grupo, selecciona uno solo
+
+
+PSEUDO ELEMENTS
+Son modificaciones para nuestros selectores pero van a seleccionar una parte particular de los elementos seleccionados
+para que podamos diseñar cosas como la primera letra o linea de algunos elementos
+
+EJEMPLOS
+- ::after
+- ::before
+- h2::first-letter{ font-size: 50px; } - Cambia el tamaño de la primera letra de todos los H2
+- p::first-line{ color: violet; } - Cambia de color la primera linea del parrafo
+- ::selection { background-color: rgb(207, 207, 10); } - Seleccionas una parte del texto y cambia de color
+
+
+THE CSS CASCADE: Hojas de estilo cascada. Se refiere a que el orden en el que se declaran los estilos realmente importa
+
+POR EJEMPLOS: Tenemos
+h1,h2{ color: #1d3557;}
+h1,h2{ color: brown; }
+
+El que primero reconoce es el de arriba pero gracias a que es en cascada, se establece el ultimo
+por ende, entre los dos elige el segundo
+
+SPECIFICITY
+El navegador decide que reglas aplicar cuando hay un conflicto
+- Tengo mas de un estilo que se esta aplicando o que podria aplicarse a ambos
+
+EJEMPLO
+
+#signup{ Este es el MAS IMPORTANTE
+    background-color: #1d3557;
+    color: #f1faee;
+}
+
+.post button:hover{
+    background-color: #e63946;
+    color: #f1faee;
+}
+
+button:hover{
+    background-color: olive;
+    font-size: 10px;
+}
+
+Lo que hace es medir que tan especifico es un selector dado y cuanto mas especifico sea gana
+Se realiza mediante un calculo de css
+
+Formula general:   ID > CLASS > ELEMENT (De mas a menos importante)
+            Id Selectors
+                    Class, Atrributte & 
+                    Pseudo -Class Selectors
+                                Element and Pseudo - Element
+                                Selectors
+
+
+TIP: Chrome DEV TOOLS & CSS
+Cuando apretamos INSPECCIONAR en google podemos
+    - Decidir cual de las opciones queremos usar cuando haya ESPECIFICIDAD
+    - Cambiar el color de algo
+    - Cambiar tamaño de la letra, etc
+    - POdemos ver el comportamiento que tiene cada uno de los estilos
+
+INLINE STYLES: Para concluir debate de especificidad
+Los estilos en linea son MAS especificos que los ID, lasc lases y elementos (nadie recomienda usarlas)
+
+Es cuando en el HTML le pones el STYLE dentro de la etiqueta
+
+EJEMPLO:
+
+<button id="signup" style="color: red">Sign up</button>
+
+(HAY QUE EVITARLOS PARA NO GENERAR CONFUSION)
+
+OTRA COSA QUE PODEMOS UTILIZAR
+
+    -  The !important exception: En la declaracion de estilos individuales. Por lo general, es algo que no se debe utilizar
+    (NO RECOMENDABLE)
+            . Va despues de una propiedad - color: blue !important
+            . Señala al navegador que esto debe ser lo mas especifico posible y debe anular cualquier otra declaracion (SUPER ESPECIFICO)
+            . EJEMPLO
+            button{ background-color: magenta !important; } - cambia absolutamente el color de todos los botones
+            . En lo unico que podria servir es si quiero cambiar algo que otra persona escribio y no sé donde lo cambio (PERO CASI NUNCA SE UTILIZA)
+
+*{
+    
+    background-color: cyan;
+} */
+
+body{
+    background-color: #f1faee;
+}
+
+button{
+    font-size: 30px;
+    background-color: #a8dadc;
+}
+
+h1, h2{
+    color: #1d3557;
+}
+
+
+span{
+    color: #457b9d;
+}
+
+.tag {
+    background-color: #e63946 ;
+    color: #f1faee;
+    font-size: 16px;
+}
+
+.post a{
+    color: #457b9d;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+footer a{
+    color: red;
+    
+}
+
+input + button{
+    background-color: pink;
+} 
+/* Cambia el button que viene despues del input */
+h2 + button{
+    font-size: 20px; /*Cambia el tamaño de todos los botones que vienen despues del h2*/
+}
+
+footer > a{
+    color: #457b9d;
+}
+/* Es un hijo directo de footer porque no esta dentro de un nav ni de nada */
+
+input[type="text"]{
+    color: red;
+}
+
+/* 
+Otros ejemplos:
+
+section[class="post"]{
+    background-color: violet;
+} 
+
+
+a[href*="google"]{
+    color: magenta;
+}
+
+*/
+
+/* 
+button:hover{
+    background-color: #e63946;
+    color: #f1faee;
+} */
+
+
+
+a:hover{
+    /* text-decoration: overline; */
+    text-decoration: underline;
+}
+
+.post button:active {
+    background-color: green;
+}
+
+/* .post:nth-of-type(2){
+    background-color: #dfe8dc;
+}  */
+
+.post:nth-of-type(2n){ /*2n: Selecciona cada dos*/
+    background-color: #dfe8dc;
+} 
+
+/* BUSCAR PSEUDO CLASES EN MDN */
+
+h2::first-letter{
+    font-size: 50px;
+}
+
+p::first-line{
+    color: purple;
+}
+
+/* ::selection {
+    background-color: rgb(207, 207, 10);
+} */
+
+/* h1,h2{
+    color: brown;
+} */
+
+
+#signup{ /*eL MAS IMPORTANTE*/
+    background-color: #1d3557;
+    color: #f1faee;
+}
+
+.post button:hover{ /*Selecciona un boton dentro de post*/
+    background-color: #e63946;
+    color: #f1faee;
+}
+
+button:hover{
+    background-color: olive;
+    font-size: 10px;
+}
+
+button{
+    background-color: magenta !important;
+}

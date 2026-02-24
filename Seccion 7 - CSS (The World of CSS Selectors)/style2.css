@@ -1,0 +1,31 @@
+/* CSS INHERITANCE
+Es el hecho de que algunos elementos secundarios heredaran algunas de las propiedades mas importantes si no se establecen en ese elemento especificamente 
+
+
+
+*/
+
+body{
+    color: purple;
+}
+
+section{
+    color: blue;
+}
+
+form{
+    color: greenyellow;
+}
+/* En este caso el button no cambia de color */
+/* Hay ciertos elementos que no se heredan por defecto
+
+Entonces si lo queremos hacer hay una solucion (NO MUY COMUN): 
+
+
+*/
+
+button, input{
+    color: inherit; /*Entonce si hereda el mismo color que el elemento mas cerano, en este caso el form
+    despues le sigue el h1 y asi sucesivamete*/
+}
+
