@@ -1,0 +1,57 @@
+/* - POSITION
+
+    Tipos: Static, relative, absolute, fixed
+
+    . Static: es la predeterminada - asi es como se posiciona cada elemento con los que hemos trabajado
+    (No tienen ningun efecto si el elemento se posiciona estaticamente)
+    . Relative: Mantendra el elemento en el flujo normal del documento pero podemos compensarlo en relacion asi mismo
+    usando la parte superior, izq, der, inferior. El elemento esta posicionado con relacion a donde estaria normalmente
+    Lo voy moviendo desde su lugar original a otros lugares pero sigue manteniendo su lugar original
+    . Absolute: El elemento elimina el flujo de documentos normal y no se crea espacio para el elemento
+    . fixed: Su posicion es relativa al bloque contenedor inicial
+    
+
+ */
+div{
+    width: 100px;
+    height: 100px;
+    background-color: olive;
+    border: 2px solid black;
+    margin: 10px;
+    display: inline-block;
+}
+
+ #middle{
+    background-color: chartreuse;
+ }
+
+ #static #middle{
+    position: static;
+    top: 100px;
+ }
+
+ #relative #middle{
+    position: relative;
+    top: 50px;
+    left: 50px;
+ }
+
+ #absolute{
+    position: relative;
+    /*Esto se hace para que el div no se vaya para arriba y queden compensados */
+ }
+
+ #absolute #middle{
+    /* Parece que hay solo dos div pero no, el tercer div azul esta dentro del div del medio 
+    Ya que no ocupa ningun espacio en el documento, se elimina el flujo y se pone abajo del otro*/
+    /* Se compensa moviendo el elemento de arriba a otro lugar */
+    position: absolute;
+    top: 50px;
+    left: 50px;
+ }
+
+ #fixed #middle{
+    position: fixed;
+    top: 0px;
+    left: 400px;
+ }

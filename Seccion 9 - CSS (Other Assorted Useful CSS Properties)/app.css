@@ -1,0 +1,46 @@
+/* 
+
+- OPACITY + ALPHA CHANNEL
+
+    . Propiedad que se puede usar con los colores
+    . Ambos tienen que ver con las transparencia pero son diferentes
+
+    ALPHA CHANNEL
+
+    . Se usa con el RGB
+    . Pero ahora se le agrega una propieda mas = rgba (o, 298, 121, 0.5)
+    . 0.5 es el alpha
+    . Va desde cero a uno
+    . El fondo que le ponemos se hace transparente pero no afecta al texto
+
+    OPACITY
+
+    .Va de cero a uno
+    . Se transparenta en relacion al fondo de atras y afecta tambien al texto
+    . Cambia todo de color
+
+
+*/
+
+section{
+    width: 500px;
+    height: 500px;
+    background-color: magenta;
+}
+
+#rgba{
+    width: 50%;
+    height: 50%;
+    /* background-color: rgba(255, 255, 255, 0.7); */
+    background-color: #7fffd491;
+    /* En hexadecimal tenemos dos sigitos que van desde cero a cinco para una transparencia total
+    FF: Es no transparencia en absoluto
+    
+    */
+}
+#opacity{
+    width: 50%;
+    height: 50%;
+    background-color:yellow;
+    opacity: 0.3;
+}

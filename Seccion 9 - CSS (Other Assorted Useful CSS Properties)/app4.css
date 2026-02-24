@@ -1,0 +1,117 @@
+/* 
+
+-TRANSFORM: . Nos permite rotar cosas, deformar su perspectiva. 
+            . Podemos ecarlarlos, estirarlos y sesgarlos
+            . Podemos traducirlos o moverlos a lo largo de la pagina, hacia arriba, abajo y todo tipo de cosas que podemos hacer varias a la vez
+            . Podemos rotar algo y escalarlo, etc. TRANSFORMAR ELEMENTOS EN GENERAL
+            
+
+HAY UN MONTON QUE PODEMOS USAR:
+
+1) Rotate - Requiere un par de unidades diferentes: Degrees (represents an angle in deg), gradians (represents an angle in grad), radians (represents an angle in rad), turn (Represents an angle in a number of turns)
+
+Ejemplos: 
+
+h1:nth-of-type(1)
+            {transform: rotate(45deg); Rota a 45 grados todos los h1 (1)}
+            {transform: rotate(180deg); Da vuelta a 180° el h1}
+
+h1:nth-of-type(1){
+    transform-origin: top right; Mueve el h1 hacia la derecha
+    transform: rotate(180deg); Rota a 45 grados todos los h1 (1) }
+
+TAMBIEN podemos rotar el EJE X y el EJE Y por separado, con scale
+
+h1:nth-of-type(2){
+    transform: scale(0.5); Tanto el eje x como el y se reducen a la mitad 
+    transform: scale(2); Tanto el eje x como el y se amplian
+    transform: scale(2, 1); Cambia el x de una forma y el y de otra
+}
+
+2)Translate - Nos permite tomar un elemento y moverlo 
+
+EJEMPLOS:
+
+h1:nth-of-type(3){ transform: translateX(200px); Movio el h3 en X hacia la izq, 200px }
+h1:nth-of-type(4){ transform: translateX(-200px); Movio el h3 en X hacia la der, -200px }
+
+h1:nth-of-type(4){ transform: translate(-200px, 100px); Movio el h3 en X hacia la der, -200px}
+
+
+3) Sesgado (Skew) -  Los transforma moviendolo de su eje. Como si fuera en otra dimension 3D
+    
+    EJEMPLOS
+
+    section:nth-of-type(2) h1:nth-of-type(1){ transform: skew(30deg) }
+    section:nth-of-type(2) h1:nth-of-type(2){ transform: skew(10deg, 20deg) }
+
+SE PUEDEN COMBINAR AMBOS
+
+
+
+*/
+
+h1{
+    background-color: green;
+    border: 5px solid olive;
+    color: white;
+    padding: 0.7em;
+    width: 300px;
+    font-size: 1.8em;
+    text-align: center;
+    margin: 20px auto;
+    font-family:'Courier New';
+    font-weight: lighter;
+}
+
+h1:nth-of-type(2n){
+    background-color: yellow;
+}
+h1:nth-of-type(3n){
+    background-color: rgb(207, 112, 35);
+}
+h1:nth-of-type(4n){
+    background-color: rgb(175, 12, 12);
+}
+
+
+
+section:first-of-type :nth-of-type(1){
+    transform-origin: top right;
+    transform: rotate(180deg); /*Rota a 45 grados todos los h1 (1)*/
+}
+section:first-of-type h1:nth-of-type(2){
+    /* transform: scale(0.5); Tanto el eje x como el y se reducen a la mitad */
+    /* transform: scale(2, 1); Tanto el eje x como el y se amplian */
+    transform: scaleY(0.6);
+}
+section:first-of-type h1:nth-of-type(3){
+    transform: translateX(200px); /*Movio el h1(3) en X hacia la izq, 200px*/
+}
+section:first-of-type h1:nth-of-type(4){
+    transform: translate(-200px, 100px); /*Movio el h1(4) en eje x y en eje y*/
+}
+
+
+section:nth-of-type(2) h1:nth-of-type(1){
+    transform: skew(30deg)
+}
+
+section:nth-of-type(2) h1:nth-of-type(2){
+    transform: skew(10deg, 20deg) /*Lo hace ver como en 3D*/
+}
+
+section:nth-of-type(2) h1:nth-of-type(3){
+    transform: rotate(-20deg) scale(1.3);
+} /*Se combinan ambos*/
+
+section:nth-of-type(2) h1:nth-of-type(4){
+    transform: translateX(-500px) rotate(0.5turn) scale(1.5); /*Aca combina 3*/
+}
+
+/*Si pongo un boton en un h1, tambien se transforma*/
+
+/*AHORA QUIERO AGARRA UNA SOLA SECCTION Y CAMBIARLA*/
+section:nth-of-type(2){
+    transform: scale(0.7) translateX(500px);
+}
