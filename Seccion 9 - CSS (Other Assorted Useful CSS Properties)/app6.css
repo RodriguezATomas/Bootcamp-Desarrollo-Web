@@ -1,0 +1,52 @@
+/* 
+
+- The Truth About Background
+
+En lugar de bg-color se puede usar una imagen con la url
+
+PROPIEDADES:
+
+    . background-size: cover; - La imagen cubre todo el fondo (pero se estira un poco)
+    . background-size: contain; - Mantiene la imagen lo mas grande posible sin estirarla ni recortarla pero tenemos una repeicion
+    . background-repeat: no-repeat; - Para que no se repita la imagen si uso contain
+    . background-position: bottom; - Donde empieza la imagen - Mas abajo, arriba o a los costados 
+
+    Tambien se puede hacer así:
+
+    . background: no-repeat url("https://images.unsplash.com/photo-1771919336237-4b11b12e0793?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+
+    ESTO NO SE PUEDE
+
+    . background: url("https://images.unsplash.com/photo-1771919336237-4b11b12e0793?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center cover;
+
+    PERO ESTO SI
+
+    . background: url("https://images.unsplash.com/photo-1771919336237-4b11b12e0793?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center/cover;
+
+SE PUEDE TENER MULTIPLES BACKGROUNDS
+
+Por ejemplo:
+
+. background: center/40% url("https://images.unsplash.com/photo-1771919336237-4b11b12e0793?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+. background: center/40% no-repeat url("https://images.unsplash.com/photo-1771919336237-4b11b12e0793?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"), green;
+
+(Tambien se puede hacer con dos imagenes)
+
+*/
+
+section{
+    width: 80%;
+    height: 800px;
+    /* background-color: purple; */
+    background: center/40% no-repeat url("https://images.unsplash.com/photo-1771919336237-4b11b12e0793?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"), green;
+    /* background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom; */
+
+    margin: 0 auto;
+}
+
+h1{
+    font-size: 100px;
+    color: white;
+}

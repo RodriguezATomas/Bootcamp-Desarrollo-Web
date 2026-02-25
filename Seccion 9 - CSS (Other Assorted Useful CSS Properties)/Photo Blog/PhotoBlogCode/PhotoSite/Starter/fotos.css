@@ -1,0 +1,28 @@
+img{
+    width: 30%; /*Para que entren bien 3 fotos*/
+    /* margin: 1.6666%; */
+    margin: calc(10%/6); /*Mejor opcion que hacer la cuenta*/
+}
+
+/* 
+30% + 30% + 30% = 90% -> Nos queda un 10% libre
+
+10% = Lo divido en un numero menor. En este caso dividido 6 porque cada imagen
+tiene 2 lados, y como son 3 imagenes entonces son 6 lados
+
+Ahi si va a quedar bien el margen
+
+Tomas el 10% y dividirlo por 6 = 1.6666% para que nos de bien el margen
+
+*/
+
+nav{
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    border-bottom: 2px solid rgb(143, 135, 135);
+    width: 30%;
+    margin-left: calc(10%/6);
+    padding: 1.2em 0;
+
+}
