@@ -1,0 +1,159 @@
+/* 
+- INTRO TO CSS FLEXBOX (MUY IMPORTANTE)
+
+Serie de propiedades que usamos para diseñar elementos en nuestra pagina
+en una caja de contendio
+
+Tenemos un contenedor y queremos distribuir todo en ese contenedor de manera uniforme
+
+POR EJEMPLO: en una pagina web cuando la voy minimizando, los elementos se van achicando pero cada uno respeta
+su tamaño respecto a los otros. Esto se hace con FLEXBOX - Son elementos flexibles
+
+
+Properties:
+
+    . FLEX-DIRECTION: Nos permite dirigir la direccion del eje principal denuestro contenedor
+
+    EJEMPLOS:
+
+    flex-direction: row; - Es el predeterminado 
+    flex-direction: row-reverse; - Invierte el orden horizontalmente (Ahora empieza de derecha a izq)
+    flex-direction: column; Se direcciona verticalmente dentro del contenedor
+    flex-direction: column-reverse; Lo mismo que column pero a la inversa
+
+    (TODO LO QUE CONFIGURAMOS PARA QUE SE FLEXIONE TIENE UN EJE PRINCIPAL, EL VALOR PREDETERMINADO VA DE IZQ A DERECHA
+    PERO NOSOTROS PODEMOS CAMBIARLO - DETERMINA COMO FLUYE EL CONTENIDO DEL CONTENEDOR)
+
+    . JUSTIFY-CONTENT: Determina como en los elementos reales se distribuye el contenido en el eje principal
+
+    EJEMPLOS:
+
+    justify-content: flex-start; Es el predeterminado - Va de izq a derecha
+    justify-content: flex-end; Toma el contenido y lo mueve al final del eje principal
+    justify-content: center; Centra el contenido a lo largo del eje principal
+    justify-content: space-between; El espacio entre ellos ocupa todo el espacio extra del contenedor y lo distribuye PERO NO en los BORDES EXTERIORES
+    justify-content: space-around; Le da a cada elemento la misma cantidad de espacio alrededor - Pero a la mitad respecto a los bordes
+    justify-content: space-evenly; todos tienen la misma cantidad de espacio - tambien respecto a los bordes
+    
+    Si en flex-direccion uso row-reverse, column, colum-reverse: 
+
+        . El justify-content se aplica igual pero respecto a como indique cada uno
+
+
+    . FLEX WRAP: Para que queden la misma cantidad de elementos por columnas
+
+    Dos elementos que se necesitan saber wrap y wrap-reverse
+
+    EJEMPLOS:
+
+    flex-wrap: wrap; Nuestros elementos van de arriba abajo y luego una nueva columna
+    flex-wrap: wrap-reverse; Lo mismo pero al reves
+    flex-wrap: nowrap; No hace el wrap - No cambia
+
+    
+    . ALIGN-ITEMS: Distribuira el espacio o nuestros articulos a lo largo del eje transversal
+    (VERTICAL U HORIZONTAL)
+
+    EJEMPLOS:
+
+    align-items: flex-start; Se alinearan a lo largo del comienzo del eje tranversal - Los tira hacia arriba
+    align-items: flex-end; Tira todos los elementos hacia abajo
+    align-items: center; Tira los elementos hacia el medio
+    align-items: baseline; Tira los elementos hacia arriba y el texto en la misma linea
+
+    . ALIGN-CONTENT: Para controlar o distribuir el espacio a lo largo del eje transversal,
+    pero solo cuando tenemos varias filas o columnas, dependiendo del diseño (si estamos en filas o en columnas)
+
+        (Es el espacio uniforme entre las columnas, como estan separadas entre si
+        Y el espacio entre filas, entre si mismas)
+    
+    EJEMPLOS
+    Tenemos que usar tambien flex-wrap o wrap-reverse
+    (flex-wrap: wrap;)
+    Indicamos si es en fila o columna
+    (flex-direction: column;)
+
+    align-content: center; Espacio entre columnas - Estan centradas
+    align-content: flex-start; Lo mueve hacia la izquierda
+    align-content: space-between; Genera espacio entre las columnas o filas
+
+
+    . ALIGN-SELF: Es lo mismo pero agregado a ELEMENTOS INDIVIDUALES
+
+    (Tambien se puede ir cambiando respecto a filas o columnas, justify, etc).
+
+    EJEMPLOS:
+    div:nth-of-type(3){ align-self: center; Alinea solo el div 3 en el centro }
+    div:nth-of-type(2){ align-self: flex-end; Alinea solo el div 2 abajo }
+
+
+
+*/
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1{
+    text-align: center
+}
+
+#container{
+    background-color: #003049;
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    border: 5px solid #003049;
+    
+    display: flex; /*Quedan todos bien distribuidos de izq a derecha*/
+    
+     flex-direction: row; /* Es el predeterminado */
+    /* flex-direction: row-reverse; Invierte el orden horizontalmente (Ahora empieza de derecha a izq) */
+    /* flex-direction: column; Se direcciona verticalmente dentro del contenedor */
+    /* flex-direction: column-reverse; Lo mismo que column pero a la inversa */
+
+    /* justify-content: flex-start; Predeterminado - de izq a derecha */
+    /* justify-content: flex-end; Toma el contenido y lo mueve al final del eje principal */
+    justify-content: center; /* Centra el contenido a lo largo del eje principal */
+    /* justify-content: space-between; El espacio entre ellos ocupa todo el espacio extra del contenedor y lo distribuye PERO NO en los BORDES EXTERIORES */
+    /* justify-content: space-around; Le da a cada elemento la misma cantidad de espacio alrededor - Pero a la mitad respecto a los bordes */
+    /* justify-content: space-evenly; todos tienen la misma cantidad de espacio - tambien respecto a los bordes */
+    
+    
+    /* flex-wrap: wrap; Nuestros elementos van de arriba abajo y luego una nueva columna */
+    flex-wrap: wrap; /*Lo mismo pero al reves*/
+    /* flex-wrap: nowrap; No hace el wrap - No cambia */
+
+
+    align-items: flex-start; /* Se alinearan a lo largo del comienzo del eje tranversal - Los tira hacia arriba */
+    /* align-items: flex-end; Tira todos los elementos hacia abajo */
+    /* align-items: center; Tira los elementos hacia el medio */
+    /* align-items: baseline; Tira los elementos hacia arriba y el texto en la misma linea */
+
+     /* align-content: center; Espacio entre columnas/filas - Estan centradas */
+    /* align-content: flex-start; Lo mueve hacia la izquierda (o inicio) */
+    /* align-content: space-between; Genera espacio entre las columnas o filas */
+
+
+}
+
+
+
+/* Todos los divs estan dentro del contenedor pero distribuidos en forma vertical
+ENTONCES yo quiero cambiar eso para que todos queden bien alineados dentro del contenedor
+
+*/
+
+#container div{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    /* font-size: 4em; */
+}
+
+div:nth-of-type(2){
+    align-self: flex-end; /*Alinea solo el div 2 abajo */
+}
+div:nth-of-type(3){
+    align-self: center; /*Alinea solo el div 3 en el centro*/
+}
