@@ -1,0 +1,179 @@
+/* 
+-  Responsive Design & Media Queries Intro
+
+    . Responsive Design: Se refiere a crear un sitio web que pueda responder al dispositivo en el que está (ya sea el tamaño
+    de la pantalla, si esta en un dispositivo pequeño o grande, etc)
+
+    . Media Queries: Caracteristicas que podemos escribir en el CSS que nos permiten cambiar nuestros
+    estilos dependiendo de algun parametro, mas comunmente pantalla con tipo u orientacion del dispositivo
+    (Cosas que podemos hacer solo si esta en vertical o en modo horizontal)
+
+    Ej: Si estamos en una pantalla pequeña contraemos la barra de navegacion para que no ocupe mucho espacio
+
+    [ESTOS ESTILOS SOLO SE APLICARAN A UN TAMAÑO DE PANTALLA DETERMINADO O INFERIOR]
+
+    (A medida que nosotros agrandamos y achicamos la pantalla, los elemntos van cambiando su tamaño tambien)
+
+THE POWER OF MEDIA QUERIES: Son el mecanismo principal que podemos usar para hacer un sitio web responsive para cambiar
+el estilo o eliminar cosas, mostrar y ocultar, cambiar sus tamaños, pasar de una fila a columna, etc
+
+
+    . todos empiezan con @media
+    . mas utilizados: ancho, largo, etc
+
+    . Se puede combinar consultas con la palabra AND
+
+ */
+
+ body{
+    font-family: 'Open Sans', sans-serif;
+ }
+ h1{
+    font-size: 6em;
+    text-align: center;
+ }
+ nav{
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between; /*Espacio entre el ul y los links del principio y del final*/
+ }
+
+
+
+ ul, li{
+    display: inline;
+    margin: 0;
+    padding: 0;
+ }
+
+ ul{
+   /* border: 1px solid red; */
+   flex: 1; /*El espacio que ocupa*/
+   max-width: 50%; /*queremos que ocupe la mitad del espacio*/
+   display: flex;
+   justify-content: space-evenly; /*espacio entre los links del ul*/
+
+ }
+
+
+ /*MEDIA QUERIES*/
+ /* @media (width: 800px){
+    h1{
+        color: purple;
+    }
+ } */
+
+/*Esto quiere decir que cuadno voy minimizando la pantalla y el h1 llega a menos de
+800px, entonces ahi recien se cambia a color violeta. Cuando lo vuelvo a agrandar ya es negro de nuevo
+(NO ES MUY COMUN)
+*/
+
+
+ /* @media (min-width: 800px){
+    h1{
+        color: purple;
+    }
+ } */
+
+ /*Ahora al reves, PRIMERO está establecido en violeta, y cuando minimizo la pantalla y
+ a menos de 800px entonces ahi si pone la letra en negro*/
+
+
+/* @media (max-width: 800px){
+    h1{
+        color: purple;
+    }
+ } */
+
+ /*Ahora de nuevo igual que el primero. Al principio aparecen las letras en negro
+ y cuando lo minimizo y llega a menos de 800px se vuelven violeta */
+
+/* @media (min-width: 600px) and (max-width: 800px){
+    h1{
+        color: purple;
+    }
+ } */
+
+ /*Aca empieza en negro, cuando lo vas minimizando y llega a menos de 800px se cambia a violeta y cuando pasa a menos de 600px se vuelve 
+ a cambiar a negro*/
+
+
+
+
+/*COMBINANDO: Empieza en negro, cuando pasa a menos de 1500px se vuelve verde, cuando pasa a 
+menos de 1000px se vuelve naranja y cuando pasa a menos de 500px se vuelve rojo*/
+
+
+/* @media (max-width: 1500px){
+    h1{
+        color: yellowgreen;
+    }
+ }
+
+ @media (max-width: 1000px){
+    h1{
+        color: orange;
+    }
+ }
+   */
+
+ /* @media (max-width: 500px){
+    h1{
+        color: red;
+    }
+ } */
+
+
+/* OTRA FORMA - Establecer el h1 con un color determinado (rojo) y cuando pase a 
+mas de 500px se vuelve naranja, cuando pase 1000´x se vuelve amarillo y cuando
+pase 1500px se vuelve verde */
+
+ h1{
+   color: red;
+ }
+
+ @media (min-width: 500px){
+   h1{
+      color: orange;
+   }
+ }
+ @media (min-width: 1000px){
+   h1{
+      color: yellow;
+   }
+ }
+ @media (min-width: 1500px){
+   h1{
+      color: yellowgreen;
+   }
+ }
+
+
+/*Puedo cambiar desde google (INSPECCIONAR) el tipo de vista (VERTICAL U HORIZONTAL) y cuando la cambio me 
+aparece de este tipo con fondo violeta*/
+
+/* @media (orientation: landscape){
+   body{
+      background-color: magenta;
+   }
+} */
+
+
+
+@media (max-width: 768px){ /*Cuando pasa a menos de 768px, la letra se vuelve mas chica*/
+   h1{
+      font-size: 4em;
+   }
+   nav, nav ul{
+      flex-direction: column;
+      align-items: center; 
+   }
+
+   /*cuando minimizo la pantalla, los elementos se centran en el medio en direccion de columna*/
+}
+
+@media (max-width: 576px){ /*Cuando pasa a menos de 576px, se vuelve mas chica todavia*/
+   h1{
+      font-size: 3em;
+   }
+}

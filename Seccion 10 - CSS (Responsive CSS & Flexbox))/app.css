@@ -88,6 +88,47 @@ Properties:
 
 
 
+- Flex Sizing Properties
+
+3 propiedades relacionadas con los elementos individuales en un contenedor flexible
+y como crecen o decrecen cuadno hay un espacio disponible o cuando hay muy poco
+espacio
+
+
+    . Flex-Basis - Determina el tamaño inicial de un elemento antes de colocarlo en una especie de punto de partida
+    (antes de agregarlo a nuestro contenedor flexible)
+
+    EJEMPLO: 
+    
+    flex-basis: 300px; 
+
+    Reemplaza el ancho o largo del div.
+    Los espacios flexibles estan a lo largo del eje principal (depende si el flex-wrap es: row o column) 
+    
+    Son el tamaño inicial en el que se debe agregar un elemento a nuestro cuadro y puede ser ancho o largo
+    depende del ROW o COLUMN
+
+    . Flex-grow - Controla la cantidad de espacio que ocupa un elemento si hay espacio disponible
+    
+    EJEMPLOS: Nos sobra espacios de los dos lados en el div, entonces podemos agrandar los elementos individuales para que ocupen ese espacio
+
+
+
+    . Flex-shrink: velocidad a la que los elementos se encogen cuando no hay suficiente espacio en el contenedor
+      flex-shrink: 2; Como no entra todo, el elemento se va reduciendo
+
+- Flex
+
+Nos permite configurar los 3 de una vez = FLEX-GROW | FLEX-SHRINK | FLEX-BASIS
+
+    . Two values - flex: 1 20px (flex-grow, flex-basis)
+    . Two values - flex: 1 2 (flex-grow, flex-shrink)
+    . One value - flex: 1, unitless number (flex-grow)
+    . Three values - flex: 2 2 10% (grow, shrink, basis)
+*/
+
+
+
 */
 
 body{
@@ -121,11 +162,11 @@ h1{
     
     
     /* flex-wrap: wrap; Nuestros elementos van de arriba abajo y luego una nueva columna */
-    flex-wrap: wrap; /*Lo mismo pero al reves*/
+    /* flex-wrap: wrap; Lo mismo pero al reves */
     /* flex-wrap: nowrap; No hace el wrap - No cambia */
 
 
-    align-items: flex-start; /* Se alinearan a lo largo del comienzo del eje tranversal - Los tira hacia arriba */
+    /* align-items: flex-start; Se alinearan a lo largo del comienzo del eje tranversal - Los tira hacia arriba */
     /* align-items: flex-end; Tira todos los elementos hacia abajo */
     /* align-items: center; Tira los elementos hacia el medio */
     /* align-items: baseline; Tira los elementos hacia arriba y el texto en la misma linea */
@@ -147,13 +188,69 @@ ENTONCES yo quiero cambiar eso para que todos queden bien alineados dentro del c
 #container div{
     width: 200px;
     height: 200px;
+    /* max-width: 300px; Si no quiero que pase de cierta altura o ancho */
     text-align: center;
     /* font-size: 4em; */
-}
+    flex-basis: 600px; /*Reemplaza el ancho o largo del div.
+    Los espacios flexibles estan a lo largo del eje principal (depende si el flex-wrap es: row o column) 
+    
+    Son el tamaño inicial en el que se debe agregar un elemento a nuestro cuadro y puede ser ancho o largo
+    depende del ROW o COLUMN
+    */
 
+
+    /* PARA HACERLO GRUPAL - Todos los elementos ocupan el espacio disponible */
+    /* flex-grow: 1;  */
+
+
+
+}
+/* 
 div:nth-of-type(2){
-    align-self: flex-end; /*Alinea solo el div 2 abajo */
+    align-self: flex-end; Alinea solo el div 2 abajo
 }
 div:nth-of-type(3){
-    align-self: center; /*Alinea solo el div 3 en el centro*/
+    align-self: center; Alinea solo el div 3 en el centro
+} */
+
+
+
+
+
+/* PARA HACERLO INDIVIDUAL */
+
+div:nth-of-type(1){
+     flex-grow: 1; /*El div 1 ocupa el espacio disponible */
+     flex-shrink: 2; /*Como no entra todo, el elemento se va reduciendo*/
+}
+
+/* Si tengo 2, entonces los dos ocupan el espacio disponible */
+
+div:nth-of-type(5){
+    flex-grow: 2; /* El div 2 ocupa el otro espacio disponible */
+    flex-shrink: 0; /*No se va a encoger*/
+}
+
+/*Si el flex-grow tiene distintos numeros, se van comiendo a los otros*/
+
+
+
+main{
+    width: 80%;
+    margin: 0 auto;
+    border: 5px solid black;
+    height: 500px;
+    display: flex;
+}
+
+main .sidebar{
+    background-color: purple;
+    /* border: 2px solid white; */
+    flex: 1 2 300px;
+
+}
+
+main .maincontent{
+    background-color: rgb(243, 187, 243);
+    flex: 2 1 800px;
 }
