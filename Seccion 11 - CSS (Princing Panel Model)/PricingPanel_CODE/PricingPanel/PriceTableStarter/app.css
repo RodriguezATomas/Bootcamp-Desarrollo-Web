@@ -53,7 +53,7 @@ table {
 
 html{
     box-sizing: border-box;
-    font-family: 'opens sans', sans-serif;
+    font-family: 'Opens Sans', sans-serif;
 }
 
 body{
@@ -67,7 +67,7 @@ body{
 
 /*LA CLASE PANEL ENVUELVE TODO*/
 
-.panel{ 
+.panel { 
     background-color: white;
     border-radius: 10px;
     padding: 15px 25px;
@@ -81,11 +81,11 @@ body{
 
 /*PARA AGREGARLE UNA LINEA QUE SEPARE CADA DIV*/
 
-.pricing-plan{ 
-    border-bottom: 2px solid black;
+.pricing-plan { 
+    border-bottom: 2px solid #e1f1ff;
     
 }
-.pricing-plan:last-child{ 
+.pricing-plan:last-child { 
     border-bottom: none; 
     /*Al ultimo no le agrega una linea*/ 
 }
@@ -93,38 +93,38 @@ body{
 
 /* PARA SEPARAR Y QUE QUEDEN BIEN LAS IMAGENES */
 
-.pricing-img{
+.pricing-img {
     margin-bottom: 25px;
     max-width: 100%;
 }
 
 /*AHORA VAMOS A TRABAJAR EN LA TIPOGRAFIA*/
 
-.pricing-header{ /*Titulo de arriba*/
+.pricing-header { /*Titulo de arriba*/
     color: #888;
     font-weight: 600;
     letter-spacing: 1px;
 }
 
-.pricing-features{ /*Lo que esta abajo del titulo gris*/
+.pricing-features { /*Lo que esta abajo del titulo gris*/
     margin: 50px 0 25px;
     color: #016ff9;
     
 }
-.pricing-features-item{ /*seleccionamos los items individuales*/
+.pricing-features-item { /*seleccionamos los items individuales*/
     font-weight: 600;
     letter-spacing: 1px;
     font-size: 12px;
     line-height: 1.5;
     padding: 15px 0;
-    border-top: 1px solid black;
+    border-top: 2px solid #e1f1ff;
 }
 
-.pricing-features-item:last-child{ /*al ultimo de los items si le agrega una linea para separar*/
-    border-bottom: 1px solid black;
+.pricing-features-item:last-child { /*al ultimo de los items si le agrega una linea para separar*/
+    border-bottom: 2px solid #e1f1ff;
 }
 
-.pricing-price{
+.pricing-price {
     color: #016ff9;
     display: block;
     font-size: 32px;
@@ -174,7 +174,7 @@ body{
     entonces quiero eliminar el borde inferior y agregar un borde derecho*/
     .pricing-plan{
         border-bottom: none;
-        border-right: 2px splid black;
+        border-right: 2px solid #e1f1ff;
         padding: 25px 50px; /*espacio en el interior*/
     }
     .pricing-plan:last-child{ /*al ultimo de los 3, le saca el borde de la derecha*/
