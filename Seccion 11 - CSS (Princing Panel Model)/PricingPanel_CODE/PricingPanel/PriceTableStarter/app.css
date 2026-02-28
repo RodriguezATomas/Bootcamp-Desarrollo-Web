@@ -82,7 +82,7 @@ body{
 /*PARA AGREGARLE UNA LINEA QUE SEPARE CADA DIV*/
 
 .pricing-plan{ 
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid black;
     
 }
 .pricing-plan:last-child{ 
@@ -111,7 +111,7 @@ body{
     color: #016ff9;
     
 }
-.pricing-features-items{ /*seleccionamos los items individuales*/
+.pricing-features-item{ /*seleccionamos los items individuales*/
     font-weight: 600;
     letter-spacing: 1px;
     font-size: 12px;
@@ -120,7 +120,7 @@ body{
     border-top: 1px solid black;
 }
 
-.pricing-features-items:last-child{ /*al ultimo de los items si le agrega una linea para separar*/
+.pricing-features-item:last-child{ /*al ultimo de los items si le agrega una linea para separar*/
     border-bottom: 1px solid black;
 }
 
@@ -174,7 +174,7 @@ body{
     entonces quiero eliminar el borde inferior y agregar un borde derecho*/
     .pricing-plan{
         border-bottom: none;
-        border-right: 1px splid black;
+        border-right: 2px splid black;
         padding: 25px 50px; /*espacio en el interior*/
     }
     .pricing-plan:last-child{ /*al ultimo de los 3, le saca el borde de la derecha*/
